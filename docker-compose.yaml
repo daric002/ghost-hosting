@@ -1,0 +1,30 @@
+version: '3.2'
+
+services:
+  ghost:
+    image: ghost:4-alpine # alpine is lightweight and perfect for RPi
+    container_name: ghost
+    restart: always
+    ports:
+      - 8080:2368 # ghost default port is 2368
+    environment:
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: <password>
+      database__connection__database: ghost
+      url: http://richter.pm
+    volumes:
+      - ./content:/var/lib/ghost/content
+  db:
+    image: hypriot/rpi-mysql
+    container_name: ghost_db 
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: <password>
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+# Use a docker managed volume for data persistency across reboots
+volumes:
+  mysql-data:
