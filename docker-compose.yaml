@@ -1,27 +1,32 @@
-version: '3.2'
+version: "3.2"
 
 services:
   ghost:
-    image: ghost:4-alpine # alpine is lightweight and perfect for RPi
+    image: ghost:alpine
     container_name: ghost
     restart: always
     ports:
-      - 8080:2368 # ghost default port is 2368
+      - 8080:2368
     environment:
       database__client: mysql
       database__connection__host: db
       database__connection__user: root
-      database__connection__password: <password>
+      database__connection__password: $DB_PASSWORD
       database__connection__database: ghost
       url: http://richter.pm
     volumes:
       - ./content:/var/lib/ghost/content
+    depends_on:
+      - db
   db:
-    image: hypriot/rpi-mysql
-    container_name: ghost_db 
+    image: yobasystems/alpine-mariadb:arm32v7
+    container_name: ghost_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: <password>
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Stockholm
+      - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
     volumes:
       - mysql-data:/var/lib/mysql
 
