@@ -1,12 +1,21 @@
 version: "3.2"
 
 services:
+  proxy:
+    image: caddy:2.8.4
+    container_name: proxy
+    restart: always
+    ports:
+      - 443:443
+      - 80:80
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
   ghost:
     image: ghost:alpine
     container_name: ghost
     restart: always
-    ports:
-      - 8080:2368
     environment:
       database__client: mysql
       database__connection__host: db
@@ -33,3 +42,6 @@ services:
 # Use a docker managed volume for data persistency across reboots
 volumes:
   mysql-data:
+  caddy_data:
+    external: true
+  caddy_config:

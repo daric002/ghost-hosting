@@ -1,0 +1,3 @@
+www.richter.pm richter.pm {
+reverse_proxy http://ghost:2368
+}
