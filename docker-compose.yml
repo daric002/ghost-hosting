@@ -70,5 +70,4 @@ volumes:
   mysql-data:
   mysql-data-food:
   caddy_data:
-    external: true
   caddy_config:
