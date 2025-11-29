@@ -31,7 +31,7 @@ services:
     restart: always
     environment:
       database__client: mysql
-      database__connection__host: db
+      database__connection__host: db-food
       database__connection__user: root
       database__connection__password: $DB_PASSWORD
       database__connection__database: ghost
@@ -39,7 +39,7 @@ services:
     volumes:
       - ./content:/var/lib/ghost/content
     depends_on:
-      - db
+      - db-food
   db:
     image: yobasystems/alpine-mariadb:arm32v7
     container_name: ghost_db
