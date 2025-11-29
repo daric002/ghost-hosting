@@ -12,7 +12,7 @@ services:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
-  ghost:
+  ghost-tech:
     image: ghost:alpine
     container_name: ghost
     restart: always
@@ -22,7 +22,22 @@ services:
       database__connection__user: root
       database__connection__password: $DB_PASSWORD
       database__connection__database: ghost
-      url: http://richter.pm
+      url: http://tech.richter.pm
+    volumes:
+      - ./content:/var/lib/ghost/content
+    depends_on:
+      - db
+  ghost-food:
+    image: ghost:alpine
+    container_name: ghost_food
+    restart: always
+    environment:
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: $DB_PASSWORD
+      database__connection__database: ghost
+      url: http://mat.richter.pm
     volumes:
       - ./content:/var/lib/ghost/content
     depends_on:
@@ -38,10 +53,22 @@ services:
       - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
     volumes:
       - mysql-data:/var/lib/mysql
+  db-food:
+    image: yobasystems/alpine-mariadb:arm32v7
+    container_name: ghost_db_food
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Stockholm
+      - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
+    volumes:
+      - mysql-data-food:/var/lib/mysql
 
 # Use a docker managed volume for data persistency across reboots
 volumes:
   mysql-data:
+  mysql-data-food:
   caddy_data:
     external: true
   caddy_config:
