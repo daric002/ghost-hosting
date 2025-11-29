@@ -13,7 +13,7 @@ services:
       - caddy_data:/data
       - caddy_config:/config
   ghost-tech:
-    image: ghost:alpine
+    image: ghost:5-bookworm
     container_name: ghost
     restart: always
     environment:
@@ -28,7 +28,7 @@ services:
     depends_on:
       - db
   ghost-food:
-    image: ghost:alpine
+    image: ghost:5-bookworm
     container_name: ghost_food
     restart: always
     environment:
