@@ -20,7 +20,7 @@ services:
       database__connection__user: root
       database__connection__password: $DB_PASSWORD
       database__connection__database: ghost
-      url: http://tech.richter.pm
+      url: https://tech.richter.pm
     volumes:
       - ./content:/var/lib/ghost/content
     depends_on:
@@ -35,7 +35,7 @@ services:
       database__connection__user: root
       database__connection__password: $DB_PASSWORD
       database__connection__database: ghost
-      url: http://mat.richter.pm
+      url: https://mat.richter.pm
     volumes:
       - ./content:/var/lib/ghost/content
     depends_on:
