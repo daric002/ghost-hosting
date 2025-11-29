@@ -1,5 +1,5 @@
 www.richter.pm richter.pm tech.richter.pm {
-    reverse_proxy http://ghost-tech:2368
+    reverse_proxy http://ghost:2368
 }
 
 mat.richter.pm {
