@@ -12,7 +12,7 @@ services:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
-  ghost-tech:
+  ghost:
     image: ghost:5-bookworm
     container_name: ghost
     restart: always
