@@ -1,5 +1,20 @@
 www.richter.pm richter.pm tech.richter.pm {
+    redir /amerikanska-pannkakor/ mat.richter.pm/amerikanska-pannkakor/
+    redir /detroit-style-pizza mat.richter.pm/detroit-style-pizza/
+    redir /vetedeg/ mat.richter.pm/vetedeg/
+    redir /mitt-dagliga-brod-3/ mat.richter.pm/mitt-dagliga-brod-3/
+    redir /grandma-pizza/ mat.richter.pm/grandma-pizza/
+    redir /knadfria-bagels/ mat.richter.pm/knadfria-bagels/
+    redir /fakerokt-lax/ mat.richter.pm/fakerokt-lax/
+    redir /mitt-dagliga-brod-2/ mat.richter.pm/mitt-dagliga-brod-2/
+    redir /mitt-dagliga-brod/ mat.richter.pm/mitt-dagliga-brod/
+
+    
+
+    appelkaka
+    
     reverse_proxy http://ghost:2368
+
 }
 
 mat.richter.pm {
