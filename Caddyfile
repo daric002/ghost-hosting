@@ -1,13 +1,13 @@
 www.richter.pm richter.pm tech.richter.pm {
-    redir /amerikanska-pannkakor/ mat.richter.pm/amerikanska-pannkakor/
-    redir /detroit-style-pizza mat.richter.pm/detroit-style-pizza/
-    redir /vetedeg/ mat.richter.pm/vetedeg/
-    redir /mitt-dagliga-brod-3/ mat.richter.pm/mitt-dagliga-brod-3/
-    redir /grandma-pizza/ mat.richter.pm/grandma-pizza/
-    redir /knadfria-bagels/ mat.richter.pm/knadfria-bagels/
-    redir /fakerokt-lax/ mat.richter.pm/fakerokt-lax/
-    redir /mitt-dagliga-brod-2/ mat.richter.pm/mitt-dagliga-brod-2/
-    redir /mitt-dagliga-brod/ mat.richter.pm/mitt-dagliga-brod/
+    redir /amerikanska-pannkakor/ https://mat.richter.pm/amerikanska-pannkakor/
+    redir /detroit-style-pizza https://mat.richter.pm/detroit-style-pizza/
+    redir /vetedeg/ https://mat.richter.pm/vetedeg/
+    redir /mitt-dagliga-brod-3/ https://mat.richter.pm/mitt-dagliga-brod-3/
+    redir /grandma-pizza/ https://mat.richter.pm/grandma-pizza/
+    redir /knadfria-bagels/ https://mat.richter.pm/knadfria-bagels/
+    redir /fakerokt-lax/ https://mat.richter.pm/fakerokt-lax/
+    redir /mitt-dagliga-brod-2/ https://mat.richter.pm/mitt-dagliga-brod-2/
+    redir /mitt-dagliga-brod/ https://mat.richter.pm/mitt-dagliga-brod/
     
     reverse_proxy http://ghost:2368
 
