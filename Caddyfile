@@ -8,10 +8,6 @@ www.richter.pm richter.pm tech.richter.pm {
     redir /fakerokt-lax/ mat.richter.pm/fakerokt-lax/
     redir /mitt-dagliga-brod-2/ mat.richter.pm/mitt-dagliga-brod-2/
     redir /mitt-dagliga-brod/ mat.richter.pm/mitt-dagliga-brod/
-
-    
-
-    appelkaka
     
     reverse_proxy http://ghost:2368
 
